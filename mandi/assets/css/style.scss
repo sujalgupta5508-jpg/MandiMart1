@@ -1,0 +1,377 @@
+/* ============================================
+   TOMATO MANDIMART - MAIN STYLESHEET
+   ============================================ */
+
+:root {
+    --tomato: #e74c3c;
+    --tomato-dark: #c0392b;
+    --tomato-light: #f1948a;
+    --tomato-pale: #fadbd8;
+    --green: #27ae60;
+    --green-dark: #1e8449;
+    --gold: #f39c12;
+    --cream: #fdf6f0;
+    --ink: #2c3e50;
+    --gray-light: #f8f9fa;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+a { text-decoration: none; }
+
+/* ========== NAVBAR ========== */
+.navbar-tomato {
+    background: linear-gradient(90deg, var(--tomato-dark), var(--tomato));
+    padding: 0.6rem 1rem;
+}
+
+.navbar-tomato .brand {
+    color: #fff;
+    font-weight: 800;
+    font-size: 1.5rem;
+}
+
+.navbar-tomato .brand span { color: var(--gold); }
+
+.navbar-tomato .nav-link {
+    color: #ffeaa7 !important;
+    font-weight: 500;
+    margin: 0 0.3rem;
+    transition: color 0.2s;
+}
+
+.navbar-tomato .nav-link:hover { color: #fff !important; }
+
+/* ========== HERO ========== */
+.hero {
+    background: linear-gradient(120deg, var(--tomato-dark), var(--tomato));
+    color: #fff;
+    padding: 4rem 1rem;
+    text-align: center;
+}
+
+.hero h1 {
+    font-weight: 800;
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: 0 auto 1.5rem;
+    opacity: 0.92;
+    font-size: 1.1rem;
+}
+
+/* ========== STATS ========== */
+.stats-strip {
+    background: #fff;
+    border-bottom: 1px solid #f0e6d8;
+    padding: 1rem 0;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 1.2rem 0.5rem;
+}
+
+.stat-card .num {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--tomato);
+}
+
+.stat-card .lbl {
+    font-size: 0.85rem;
+    color: #6b7a66;
+}
+
+/* ========== SECTIONS ========== */
+.section { padding: 2.5rem 1rem; }
+
+.section h2 {
+    font-weight: 800;
+    color: var(--tomato-dark);
+    margin-bottom: 1.5rem;
+}
+
+/* ========== CARDS ========== */
+.card {
+    border: none;
+    border-radius: 14px;
+    box-shadow: 0 4px 14px rgba(200, 50, 30, 0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(200, 50, 30, 0.12);
+}
+
+.card .card-title { font-weight: 700; }
+
+/* ========== BUTTONS ========== */
+.btn-tomato {
+    background: var(--tomato);
+    color: #fff;
+    font-weight: 600;
+    border: none;
+}
+
+.btn-tomato:hover {
+    background: var(--tomato-dark);
+    color: #fff;
+}
+
+.btn-outline-tomato {
+    border: 2px solid var(--tomato);
+    color: var(--tomato);
+    font-weight: 600;
+    background: transparent;
+}
+
+.btn-outline-tomato:hover {
+    background: var(--tomato);
+    color: #fff;
+}
+
+/* ========== TABLES ========== */
+.price-table th {
+    background: var(--tomato);
+    color: #fff;
+    font-weight: 600;
+}
+
+.price-table td, .price-table th {
+    vertical-align: middle;
+    padding: 0.75rem;
+}
+
+/* ========== BADGES ========== */
+.badge-grade-a { background: var(--green); }
+.badge-grade-b { background: var(--gold); }
+.badge-grade-c { background: #95a5a6; }
+
+/* ========== CHATBOT ========== */
+.chat-box {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 1050;
+    width: 340px;
+    max-height: 70vh;
+    display: none;
+    flex-direction: column;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.chat-box.open { display: flex; }
+
+.chat-head {
+    background: var(--tomato);
+    color: #fff;
+    padding: 0.7rem 1rem;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-body {
+    background: #fff;
+    padding: 0.8rem;
+    flex: 1;
+    overflow-y: auto;
+    font-size: 0.9rem;
+    min-height: 260px;
+    max-height: 400px;
+}
+
+.chat-body .msg {
+    margin: 0.35rem 0;
+    padding: 0.5rem 0.7rem;
+    border-radius: 10px;
+    max-width: 85%;
+    word-wrap: break-word;
+}
+
+.chat-body .bot {
+    background: var(--tomato-pale);
+    align-self: flex-start;
+}
+
+.chat-body .user {
+    background: var(--tomato);
+    color: #fff;
+    margin-left: auto;
+}
+
+.chat-input {
+    display: flex;
+    border-top: 1px solid #f0e6d8;
+}
+
+.chat-input input {
+    flex: 1;
+    border: none;
+    padding: 0.7rem;
+    outline: none;
+}
+
+.chat-input button {
+    background: var(--tomato);
+    color: #fff;
+    border: none;
+    padding: 0 1rem;
+    cursor: pointer;
+}
+
+.chat-fab {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 1040;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--tomato);
+    color: #fff;
+    border: none;
+    font-size: 1.6rem;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.chat-fab:hover { transform: scale(1.1); }
+
+/* ========== DROP ZONES (AI Quality) ========== */
+.compare-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.drop-zone {
+    border: 2px dashed var(--tomato);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    color: #6b7a66;
+    background: #fff;
+    cursor: pointer;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+}
+
+.drop-zone:hover, .drop-zone.drag {
+    background: var(--tomato-pale);
+    border-color: var(--gold);
+}
+
+.drop-zone img {
+    max-height: 160px;
+    border-radius: 8px;
+    margin-top: 0.5rem;
+    object-fit: cover;
+}
+
+/* ========== AUCTION CARDS ========== */
+.auction-card {
+    border-left: 4px solid var(--tomato);
+}
+
+.auction-live {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+/* ========== PROGRESS BAR ========== */
+.progress { height: 10px; }
+
+/* ========== FOOTER ========== */
+footer {
+    background: var(--tomato-dark);
+    color: #ffeaa7;
+    padding: 2rem 1rem;
+    margin-top: auto;
+}
+
+footer a {
+    color: #fff;
+    opacity: 0.8;
+}
+
+footer a:hover {
+    opacity: 1;
+    color: var(--gold);
+}
+
+/* ========== NAV PILLS ========== */
+.nav-pills-tomato .nav-link {
+    color: var(--tomato);
+    font-weight: 600;
+}
+
+.nav-pills-tomato .nav-link.active {
+    background: var(--tomato);
+    color: #fff;
+}
+
+/* ========== FORMS ========== */
+.form-control:focus, .form-select:focus {
+    border-color: var(--tomato-light);
+    box-shadow: 0 0 0 0.2rem rgba(231, 76, 60, 0.15);
+}
+
+/* ========== ALERTS ========== */
+.alert-tomato {
+    background: var(--tomato-pale);
+    border-color: var(--tomato-light);
+    color: var(--tomato-dark);
+}
+
+/* ========== UTILITIES ========== */
+.text-tomato { color: var(--tomato) !important; }
+.bg-tomato { background: var(--tomato) !important; }
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2rem; }
+    .hero { padding: 2.5rem 1rem; }
+    .compare-grid { grid-template-columns: 1fr; }
+    .chat-box { width: 90vw; right: 5vw; bottom: 5rem; }
+    .chat-fab { bottom: 0.5rem; right: 0.5rem; }
+}
+
+/* ========== ANIMATIONS ========== */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
